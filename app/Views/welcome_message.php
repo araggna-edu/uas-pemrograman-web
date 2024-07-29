@@ -9,14 +9,6 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
 </head>
 
-<body class="bg-background min-h-screen p-4">
-    <header class="bg-primary text-white p-4">
-        <!-- Header content -->
-    </header>
-    <main class="bg-white p-4 shadow-md">
-        <button class="bg-secondary text-white p-2 rounded">Secondary Button</button>
-        <button class="bg-accent text-white p-2 rounded">Accent Button</button>
-    </main>
-</body>
+<body class="">
 
-</html>
+</body>
