@@ -2,12 +2,12 @@
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between h-full px-6">
 
         <!-- Logo Section -->
-        <div class="flex items-center sm:w-full bg-primary text-tileBackground rounded-xl shadow-md p-4">
+        <div class="flex items-center  bg-primary text-tileBackground rounded-xl shadow-md p-4">
             <a href="#" class="text-2xl font-bold">E-Learning</a>
         </div>
 
         <!-- Navigation -->
-        <nav class="flex sm:w-full text-tileBackground bg-primary shadow-smooth md:rounded-2xl gap-4 p-3">
+        <nav class="flex text-tileBackground bg-primary shadow-smooth md:rounded-2xl gap-4 p-3">
             <a href="/" class="flex items-center text-lg py-2 px-4 rounded-lg menu-item" id="home">
                 <i class="las la-home mr-2 text-xl"></i>
                 <span>Home</span>
