@@ -560,6 +560,9 @@ video {
 .mb-10{
   margin-bottom: 2.5rem;
 }
+.mb-12{
+  margin-bottom: 3rem;
+}
 .mb-2{
   margin-bottom: 0.5rem;
 }
@@ -590,12 +593,6 @@ video {
 .mt-4{
   margin-top: 1rem;
 }
-.mt-8{
-  margin-top: 2rem;
-}
-.mb-12{
-  margin-bottom: 3rem;
-}
 .block{
   display: block;
 }
@@ -617,21 +614,18 @@ video {
 .h-12{
   height: 3rem;
 }
-.h-24{
-  height: 6rem;
-}
-.h-full{
-  height: 100%;
-}
-.h-screen{
-  height: 100vh;
-}
 .h-16{
   height: 4rem;
 }
 .h-fit{
   height: -moz-fit-content;
   height: fit-content;
+}
+.h-full{
+  height: 100%;
+}
+.h-screen{
+  height: 100vh;
 }
 .w-12{
   width: 3rem;
@@ -641,9 +635,6 @@ video {
 }
 .w-full{
   width: 100%;
-}
-.min-w-full{
-  min-width: 100%;
 }
 .max-w-md{
   max-width: 28rem;
@@ -678,6 +669,9 @@ video {
 .justify-around{
   justify-content: space-around;
 }
+.gap-2{
+  gap: 0.5rem;
+}
 .gap-3{
   gap: 0.75rem;
 }
@@ -687,9 +681,6 @@ video {
 .gap-5{
   gap: 1.25rem;
 }
-.gap-2{
-  gap: 0.5rem;
-}
 .gap-y-10{
   row-gap: 2.5rem;
 }
@@ -698,23 +689,11 @@ video {
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
-.divide-y > :not([hidden]) ~ :not([hidden]){
-  --tw-divide-y-reverse: 0;
-  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
-  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
-}
-.divide-gray-200 > :not([hidden]) ~ :not([hidden]){
-  --tw-divide-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-divide-opacity));
-}
 .overflow-hidden{
   overflow: hidden;
 }
 .overflow-y-auto{
   overflow-y: auto;
-}
-.whitespace-nowrap{
-  white-space: nowrap;
 }
 .rounded{
   border-radius: 0.25rem;
@@ -787,10 +766,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.bg-gray-50{
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
 .p-2{
   padding: 0.5rem;
 }
@@ -831,18 +806,8 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-.py-3{
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
 .pt-4{
   padding-top: 1rem;
-}
-.pb-12{
-  padding-bottom: 3rem;
-}
-.text-left{
-  text-align: left;
 }
 .text-center{
   text-align: center;
@@ -867,10 +832,6 @@ video {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.text-xs{
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
 .font-bold{
   font-weight: 700;
 }
@@ -891,9 +852,6 @@ video {
 }
 .tracking-normal{
   letter-spacing: 0em;
-}
-.tracking-wider{
-  letter-spacing: 0.05em;
 }
 .text-gray-600{
   --tw-text-opacity: 1;
@@ -926,14 +884,6 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.text-gray-500{
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-.text-blue-500{
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 .underline{
   text-decoration-line: underline;
@@ -1154,7 +1104,6 @@ textarea:focus{
 /* Custom styles for Quill content */
 .quill-content{
   color: var(--tw-prose-body);
-  max-width: 65ch;
 }
 .quill-content :where(p):not(:where([class~="not-prose"],[class~="not-prose"] *)){
   margin-top: 1.25em;
@@ -1671,10 +1620,6 @@ textarea:focus{
 }
 
 @media (min-width: 768px){
-
-  .md\:mb-12{
-    margin-bottom: 3rem;
-  }
 
   .md\:h-24{
     height: 6rem;

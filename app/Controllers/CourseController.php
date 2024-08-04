@@ -58,8 +58,7 @@ class CourseController extends BaseController
                 'createdby' => session()->get('userid'),
                 'updateddate' => date('Y-m-d H:i:s'),
                 'updatedby' => session()->get('userid'),
-                'isactive' => !((session()->get('userrole') != 'ADMIN')),
-                'isapprove' => !((session()->get('userrole') != 'ADMIN'))
+                'isactive' => !((session()->get('userrole') != 'ADMIN'))
             ];
 
             $courseId = $course->insert($data);
