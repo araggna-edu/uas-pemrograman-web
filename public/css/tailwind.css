@@ -16,15 +16,86 @@ textarea {
 
 /* Primary Button */
 .button-primary {
-    @apply px-4 py-2 border rounded-md text-white bg-primary border-transparent hover:bg-accent focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition duration-200 ease-in-out;
+    @apply px-4 py-2.5 border rounded-md text-white bg-primary border-transparent hover:bg-accent focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition duration-200 ease-in-out;
 }
 
 /* Secondary Button */
 .button-secondary {
-    @apply px-4 py-2 border rounded-md text-primary bg-secondary border-primary hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition duration-200 ease-in-out;
+    @apply px-4 py-2.5 border rounded-md text-primary bg-tileBackground border-primary hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition duration-200 ease-in-out;
 }
 
 /* Tertiary Button */
 .button-tertiary {
-    @apply px-4 py-2 border rounded-md text-primary bg-background border-gray-300 hover:bg-tileBackground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition duration-200 ease-in-out;
+    @apply px-4 py-2.5 border rounded-md text-primary bg-background border-gray-300 hover:bg-tileBackground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition duration-200 ease-in-out;
+}
+
+.ql-toolbar {
+    background-color: #FB923C; /* Primary color for toolbar background */
+    border: 1px solid #C2410C; /* Border color for toolbar */
+    border-radius: 8px 8px 0 0; /* Rounded corners for top */
+    color: white; /* Toolbar icon color */
+}
+
+.ql-toolbar .ql-picker, .ql-toolbar .ql-stroke, .ql-toolbar .ql-fill {
+    color: white; /* Toolbar icon color */
+}
+
+/* Quill editor focus state */
+.ql-editor.ql-blank::before {
+    color: #999; /* Placeholder text color */
+    font-style: italic; /* Placeholder text style */
+}
+
+/* Customizing toolbar icons */
+.ql-toolbar .ql-picker-label:hover, .ql-toolbar .ql-stroke:hover, .ql-toolbar .ql-fill:hover {
+    color: #C2410C; /* Hover state color */
+}
+
+/* Custom styles for Quill content */
+.quill-content {
+    @apply prose; /* Use Tailwind's prose utility for better typography */
+}
+
+.quill-content h1 {
+    @apply text-2xl font-bold mb-4;
+}
+
+.quill-content h2 {
+    @apply text-xl font-bold mb-3;
+}
+
+.quill-content p {
+    @apply mb-4;
+}
+
+.quill-content ul {
+    @apply list-disc pl-6 mb-4;
+}
+
+.quill-content ol {
+    @apply list-decimal pl-6 mb-4;
+}
+
+.quill-content img {
+    @apply max-w-full h-auto rounded-lg;
+}
+
+.quill-content blockquote {
+    @apply border-l-4 border-gray-300 pl-4 italic text-gray-600;
+}
+
+.badge {
+    @apply inline-block px-2 py-1 text-xs font-semibold rounded-full;
+}
+
+.badge-approved {
+    @apply bg-green-500 text-white;
+}
+
+.badge-pending {
+    @apply bg-yellow-500 text-white;
+}
+
+.badge-rejected {
+    @apply bg-red-500 text-white;
 }

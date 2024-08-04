@@ -12,15 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         if (itemId === covertHomeCurrentPath(currentPath)) {
-            item.classList.add('bg-primary');
-            item.classList.add('text-tileBackground');
+            item.classList.add('bg-tileBackground');
+            item.classList.add('text-primary');
         }
     });
 });
 
 function covertHomeCurrentPath(path) {
 
-    if (path === "") {
+    if (path === "" || path === "index.php") {
         return "home"
     }
 

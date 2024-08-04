@@ -1,17 +1,16 @@
 <?php
-
 namespace App\Controllers;
 
 use App\Models\ElapprovalModel;
 use App\Models\ElassetsModel;
 use App\Models\ElcoursesModel;
 
-class CourseController extends BaseController
+class CourseAdminController extends BaseController
 {
 
-    public function index(): string
+    public function index()
     {
-        return view('course/course');
+        return view('admin/course/index');
     }
 
     public function detail($id): string
@@ -27,7 +26,7 @@ class CourseController extends BaseController
         return view('course/course-add');
     }
 
-    public function edit($id)
+    public function edit($id): string
     {
         $model = new ElcoursesModel();
         $assetModel = new ElassetsModel();
@@ -58,8 +57,7 @@ class CourseController extends BaseController
                 'createdby' => session()->get('userid'),
                 'updateddate' => date('Y-m-d H:i:s'),
                 'updatedby' => session()->get('userid'),
-                'isactive' => !((session()->get('userrole') != 'ADMIN')),
-                'isapprove' => !((session()->get('userrole') != 'ADMIN'))
+                'isactive' => false
             ];
 
             $courseId = $course->insert($data);
@@ -189,18 +187,94 @@ class CourseController extends BaseController
         }
     }
 
-    public function getActiveCourses()
+    public function approvalProcess()
+    {
+        $course = new ElcoursesModel();
+        $courseApprove = new ElapprovalModel();
+
+        try {
+            $data = [
+                'isapprove' => true,
+                'isactive' => true,
+                'updateddate' => date('Y-m-d H:i:s'),
+                'updatedby' => session()->get('userid')
+            ];
+
+            $course->update($this->request->getGet('courseid'), $data);
+
+            $getIdApprove = $courseApprove->getApprovalByCourseId($this->request->getGet('courseid'));
+
+            $dataApprove = [
+                'courseid' => $this->request->getGet('courseid'),
+                'isapprove' => true,
+                'approvalby' => session()->get('userid'),
+                'updateddate' => date('Y-m-d H:i:s'),
+                'updatedby' => session()->get('userid'),
+                'isactive' => true
+            ];
+
+            $courseApprove->update($getIdApprove->approvalid, $dataApprove);
+
+            return $this->response
+                ->setStatusCode("200")
+                ->setBody(
+                    json_encode([
+                        "success" => true,
+                        "message" => "Course updated successfully!"
+                    ])
+                );
+        } catch (\Exception $e) {
+            return $this->response
+                ->setStatusCode("500")
+                ->setBody(
+                    json_encode([
+                        "success" => false,
+                        "message" => "Save Course Failed, Internal Server Error ".$e->getMessage()
+                    ])
+                );
+        }
+    }
+
+    public function deleteProcess()
+    {
+        $course = new ElcoursesModel();
+
+        try {
+            $course->delete($this->request->getGet('courseid'));
+
+            return $this->response
+                ->setStatusCode("200")
+                ->setBody(
+                    json_encode([
+                        "success" => true,
+                        "message" => "Course delete successfully!"
+                    ])
+                );
+        } catch (\Exception) {
+            return $this->response
+                ->setStatusCode("500")
+                ->setBody(
+                    json_encode([
+                        "success" => false,
+                        "message" => "Delete Course Failed, Internal Server Error ".$e->getMessage()
+                    ])
+                );
+        }
+
+    }
+
+    public function getAllCourses()
     {
         $model = new ElcoursesModel();
-        $modelAssets = new ElassetsModel();
+        $modelApproval = new ElapprovalModel();
 
         $offset = $this->request->getGet('offset');
         $limit = $this->request->getGet('limit');
 
-        $data = $model->getElcoursesLazyLoad($limit, $offset);
+        $data = $model->getAll();
 
         foreach ($data as $course) {
-            $course->attachments = $modelAssets->getAssetsByCourseId($course->courseid);
+            $course->approval = $modelApproval->getApprovalByCourseId($course->courseid);
         }
 
         return $this->response->setStatusCode(200)->setJSON($data);

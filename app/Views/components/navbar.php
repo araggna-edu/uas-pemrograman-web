@@ -1,8 +1,8 @@
-<section class="w-64 bg-tileBackground m-10 shadow-smooth rounded-2xl">
+<section class="w-64 bg-primary m-10 shadow-smooth rounded-2xl">
     <div class="p-6">
-        <a href="#" class="text-2xl font-bold">E-Learning</a>
+        <a href="#" class="text-2xl font-bold text-tileBackground">E-Learning</a>
     </div>
-    <nav class="flex flex-col mt-10 gap-3 px-3.5">
+    <nav class="flex flex-col mt-10 gap-3 px-3.5 text-tileBackground">
         <a href="/" class="flex items-center text-lg py-2 px-6 menu-item rounded-2xl" id="home">
             <i class="las la-home mr-3"></i>
             <span>Home</span>
@@ -13,3 +13,4 @@
         </a>
     </nav>
 </section>
+

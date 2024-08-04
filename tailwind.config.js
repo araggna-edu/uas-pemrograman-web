@@ -34,9 +34,11 @@ module.exports = {
         'lg': '10px', // Adjust the border radius as needed
       },
       boxShadow: {
-        'smooth': '0 4px 6px rgba(0, 0, 0, 0.1)', // Smooth shadow
+        'smooth': '0 10px 20px rgba(0, 0, 0, 0.05)', // Smooth shadow
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

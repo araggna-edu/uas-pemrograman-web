@@ -11,25 +11,20 @@
     <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
 </head>
-<!-- Body -->
-<body class="bg-background leading-normal tracking-normal">
-    <div class="flex h-screen">
-        <div class="flex-1 flex flex-col overflow-hidden">
-            <?= $this->include('components/header') ?>
-            <div class="flex-1 overflow-y-auto px-6 md:px-32 items-center">
+<body>
+    <div class="flex h-screen bg-background">
+        <?= $this->include('admin/components/sidebar') ?>
+
+        <div class="flex-1 flex flex-col">
+            <?= $this->include('admin/components/header') ?>
+            <div class="p-6">
                 <?= $this->renderSection('content') ?>
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill-image-resize-module@3.0.0/image-resize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
-
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/quill-image-resize-module@3.0.0/image-resize.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
-
-<script src="/js/profile-photo.js"></script>
-<script src="/js/sidebar.js"></script>
-
 </html>
-

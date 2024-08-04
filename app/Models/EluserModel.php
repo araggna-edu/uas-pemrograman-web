@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class EluserModel extends Model
 {
 
-    protected $table      = 'eluser';
+    protected $table = 'eluser';
     protected $primaryKey = 'userid';
 
     protected $returnType     = 'array';
